@@ -30,12 +30,63 @@ Questo progetto è un'applicazione personalizzata (FAP) per il Flipper Zero che 
     ```
 3. Compila e carica l'applicazione sul Flipper Zero utilizzando l'ambiente di sviluppo appropriato.
 
-## Utilizzo
+### Configurazione dell'Ambiente di Sviluppo
 
-1. **Avvia l'applicazione**: Avvia l'applicazione sul Flipper Zero.
-2. **Scansiona le reti WiFi**: Utilizza il tasto centrale per avviare o fermare la scansione delle reti WiFi.
-3. **Seleziona una rete**: Seleziona una rete dalla lista delle reti scansionate.
-4. **Avvia il jammer**: Utilizza il tasto destro per avviare o fermare il jammer sulla rete selezionata.
+1. **Installare le Dipendenze**:
+   - Su **Ubuntu/Debian**:
+     ```sh
+     sudo apt update
+     sudo apt install build-essential cmake gcc-arm-none-eabi git
+     ```
+   - Su **macOS** (con Homebrew):
+     ```sh
+     brew install cmake make gcc-arm-none-eabi
+     ```
+   - Su **Windows** (con WSL):
+     - Installa WSL e una distribuzione Linux (es. Ubuntu).
+     - Apri il terminale WSL e installa le dipendenze:
+       ```sh
+       sudo apt update
+       sudo apt install build-essential cmake gcc-arm-none-eabi git
+       ```
+
+### Creare una Directory di Build
+
+Crea una directory di build dove verranno salvati i file compilati:
+
+```sh
+mkdir build
+cd build
+```
+
+### Configurare il Progetto con CMake
+
+Configura il progetto utilizzando `cmake`:
+
+```sh
+cmake ..
+```
+
+Questa operazione genererà i file necessari per la compilazione.
+
+### Compilare il Progetto
+
+Compila il progetto utilizzando `make`:
+
+```sh
+make
+```
+
+### Flashare l'Applicazione sul Flipper Zero
+
+Una volta compilato, puoi flashare l'applicazione sul tuo Flipper Zero. Assicurati che il tuo Flipper Zero sia collegato al computer tramite USB. Puoi utilizzare `qFlipper`, un software grafico per Windows, per caricare il firmware sul tuo Flipper Zero.
+
+1. **Scarica e installa qFlipper**:
+   - Scarica qFlipper da [qui](https://flipperzero.one/update).
+   - Installa e apri qFlipper.
+
+2. **Carica il Firmware**:
+   - Usa qFlipper per caricare il file `.fap` generato dalla compilazione sul Flipper Zero.
 
 ## Contribuire
 

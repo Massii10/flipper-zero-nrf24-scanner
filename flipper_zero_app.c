@@ -2,6 +2,7 @@
 #include <gui/gui.h>
 #include <input/input.h>
 #include <nrf24/nrf24.h>
+#include "nrf24_jam.h"
 
 // Stato dell'applicazione
 typedef struct {
